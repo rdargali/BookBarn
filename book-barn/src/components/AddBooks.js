@@ -23,9 +23,8 @@ export class AddBooks extends Component {
         )
     }
 
-    handleAddBook = (e) => {
+    handleAddBook = () => {
 
-        fetch("")
         let newBook = {
             title: this.state.title,
             genre: this.state.genre,
@@ -37,9 +36,30 @@ export class AddBooks extends Component {
         this.setState({
             bookList: this.state.bookList.concat(newBook)
         })
-    }
+    
+
+        fetch("http://localhost:8080/submitbook", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                genre: this.state.genre,
+                publisher: this.state.publisher,
+                year: this.state.year,
+                imgURL: this.state.imgURL,
+            })
+
+    })
+        
+}
+    
+    
+       
 
     render() {
+        
         return (
             <div>
                 <h3>Add books here</h3>
@@ -53,6 +73,8 @@ export class AddBooks extends Component {
             </div>
         )
     }
+
 }
+
 
 export default AddBooks
