@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import BaseLayout from './components/BaseLayout';
 
 function App() {
   return (
     <div className="App">
-      <BaseLayout />
+      
+      <h3>Welcome to Book Barn </h3>
+      
     </div>
   );
 }

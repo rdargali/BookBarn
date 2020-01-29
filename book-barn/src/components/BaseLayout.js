@@ -7,7 +7,7 @@ export class BaseLayout extends Component {
         return (
             <div>
                 <Header />
-                children here
+                {this.props.children}
                 <Footer />
             </div>
         )
