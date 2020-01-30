@@ -8,6 +8,14 @@ app.use(express.json())
 app.use(cors())
 
 
+app.get("/viewallbooks", (req, res) => {
+
+    models.Books.findAll()
+    .then(response => res.send(response))
+    
+
+})
+
 
 app.post("/submitbook", (req, res) => {
 
