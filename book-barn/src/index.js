@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import BaseLayout from './components/BaseLayout';
 import { BrowserRouter, Route, Switch} from "react-router-dom"
-import ViewBooks from "./components/ViewBooks"
+import DisplayBooks from "./components/DisplayBooks"
 import AddBooks from "./components/AddBooks"
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
     <BaseLayout>
     <Switch>
         <Route exact path = "/"  component = {App} />
-        <Route path = "/view" component={ViewBooks} />
+        <Route path = "/view" component={DisplayBooks} />
         <Route path = "/add" component={AddBooks} />
 
 
