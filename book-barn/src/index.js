@@ -7,6 +7,7 @@ import BaseLayout from './components/BaseLayout';
 import { BrowserRouter, Route, Switch} from "react-router-dom"
 import DisplayBooks from "./components/DisplayBooks"
 import AddBooks from "./components/AddBooks"
+import UpdateBooks from "./components/UpdateBooks"
 
 ReactDOM.render(
 <BrowserRouter>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route exact path = "/"  component = {App} />
         <Route path = "/view" component={DisplayBooks} />
         <Route path = "/add" component={AddBooks} />
+        <Route path = "/update/:bookid" component={UpdateBooks} />
 
 
     </Switch>

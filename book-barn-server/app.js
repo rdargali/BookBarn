@@ -16,10 +16,19 @@ app.get("/viewallbooks", (req, res) => {
 
 })
 
+app.get("/viewbook/:bookid", (req, res) => {
+   
+    models.Books.findOne({where: {id: req.params.bookid}})
+    .then(response => res.send(response.dataValues))
 
-app.post("/submitbook", (req, res) => {
 
-    console.log(req.body)
+    
+
+})
+
+app.post("/addbook", (req, res) => {
+
+    
 
     let title = req.body.title
     let genre = req.body.genre
@@ -36,6 +45,36 @@ app.post("/submitbook", (req, res) => {
     })
    
    
+})
+
+app.post("/updatebook", (req, res) => {
+
+    
+
+    let title = req.body.title
+    let genre = req.body.genre
+    let publisher = req.body.publisher
+    let year = req.body.year
+    let imgURL = req.body.imgURL
+
+    // models.Books.create({
+    //     title: title,
+    //     genre: genre,
+    //     publisher: publisher,
+    //     year: year,
+    //     imgURL: imgURL
+    // })
+   
+   
+})
+
+app.delete("/delete/:bookid", async (req,res) => {
+   await models.Books.destroy(
+        {
+            where: {id: req.params.bookid}
+        }
+    )
+    res.send("test")
 })
 
 

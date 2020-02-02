@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function DisplayBooks() {
 
@@ -14,8 +15,11 @@ useEffect(() => {
     
 },[])
 
-   
 
+const buildUpdateURL = (bookId) => {
+    console.log(bookId)
+    return "/update/" + bookId
+}
 
 return (
     <div>
@@ -28,7 +32,11 @@ return (
                         <li>{book.genre}</li>
                         <li>{book.publisher}</li>
                         <li>{book.year}</li>
-                        <li><img alt="book" src={book.imgURL}></img></li>
+                        <li><img style={{width: "200px"}} alt="book" src={book.imgURL}></img></li>
+                        <Link to ={buildUpdateURL(book.id)} >Update</Link>
+                        
+                       
+           
     
             </ul>
             )})}

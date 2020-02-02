@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+const gohome = "http://localhost:3000/"
+
 export class AddBooks extends Component {
     constructor(props){
         super(props)
@@ -38,7 +40,7 @@ export class AddBooks extends Component {
         })
     
 
-        fetch("http://localhost:8080/submitbook", {
+        fetch("http://localhost:8080/addbook", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -69,7 +71,9 @@ export class AddBooks extends Component {
                 Year: <input name="year" type="textbox" onChange ={this.handleChange} />
                 Image: <input name="imgURL" type="textbox" onChange ={this.handleChange} />
 
-                <button onClick ={this.handleAddBook}>Add Book</button>
+                <a href={gohome}> <button onClick ={this.handleAddBook}>Add Book</button> </a>
+
+
             </div>
         )
     }
