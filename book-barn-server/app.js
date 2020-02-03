@@ -77,6 +77,40 @@ app.delete("/delete/:bookid", async (req,res) => {
     res.send("test")
 })
 
+app.put("/update/:bookid", async (req,res) => {
+
+    console.log(req.params.bookid)
+    console.log(req.body)
+
+    let id = req.body.bookid
+    let title = req.body.title
+    let genre = req.body.genre
+    let publisher = req.body.publisher
+    let year = req.body.year
+    let imgURL = req.body.title
+
+
+    await models.Books.update(
+        
+        {
+            
+            title: title,
+            genre: genre,
+            publisher: publisher,
+            year: year,
+            imgURl: imgURL
+
+
+        },
+
+         {
+             where: {id: req.params.bookid}
+         }
+     )
+     
+     res.send("test")
+ })
+
 
 app.listen(8080, () => {
     console.log("server running on 8080")

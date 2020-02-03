@@ -8,13 +8,8 @@ function App() {
     <div className="App">
 
       <h1>Welcome to BookBarn</h1>
-      
-
-      <DisplayBooks />
-
-      <AddBooks />
-
-   
+      <h3>Use menu to navigate</h3>
+         
 
       
     </div>
