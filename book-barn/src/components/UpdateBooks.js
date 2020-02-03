@@ -27,9 +27,9 @@ useEffect(() => {
 const handleDelete = () => {
 
     let bookid = book.id
-    let URL = "http://localhost:8080/delete/" + bookid
+   
 
-    fetch(URL, {
+    fetch(("http://localhost:8080/delete/" + bookid), {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

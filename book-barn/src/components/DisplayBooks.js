@@ -17,7 +17,7 @@ useEffect(() => {
 
 
 const buildUpdateURL = (bookId) => {
-    console.log(bookId)
+  
     return "/update/" + bookId
 }
 
