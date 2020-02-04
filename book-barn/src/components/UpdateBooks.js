@@ -70,7 +70,7 @@ const handleUpdate = (e) => {
             genre: book.genre,
             publisher: book.publisher,
             year: book.year,
-            imgURl: book.imgURL
+            imgURL: book.imgURL
         })
     })
     

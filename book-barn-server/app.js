@@ -47,26 +47,6 @@ app.post("/addbook", (req, res) => {
    
 })
 
-app.post("/updatebook", (req, res) => {
-
-    
-
-    let title = req.body.title
-    let genre = req.body.genre
-    let publisher = req.body.publisher
-    let year = req.body.year
-    let imgURL = req.body.imgURL
-
-    // models.Books.create({
-    //     title: title,
-    //     genre: genre,
-    //     publisher: publisher,
-    //     year: year,
-    //     imgURL: imgURL
-    // })
-   
-   
-})
 
 app.delete("/delete/:bookid", async (req,res) => {
    await models.Books.destroy(
@@ -79,15 +59,12 @@ app.delete("/delete/:bookid", async (req,res) => {
 
 app.put("/update/:bookid", async (req,res) => {
 
-    console.log(req.params.bookid)
-    console.log(req.body)
-
-    let id = req.body.bookid
+   
     let title = req.body.title
     let genre = req.body.genre
     let publisher = req.body.publisher
     let year = req.body.year
-    let imgURL = req.body.title
+    let imgURL = req.body.imgURL
 
 
     await models.Books.update(
@@ -98,7 +75,7 @@ app.put("/update/:bookid", async (req,res) => {
             genre: genre,
             publisher: publisher,
             year: year,
-            imgURl: imgURL
+            imgURL: imgURL
 
 
         },
